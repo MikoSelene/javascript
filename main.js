@@ -27,3 +27,5 @@ console.log(
 var anoatual = 2020;
 var anonascimento = 2006;
 console.log(anoatual - anonascimento);
+
+// o nuno esteve aqui :)
