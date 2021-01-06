@@ -3,7 +3,8 @@ var xp = 0;
 var materials = [
   {
     name: 'diamond',
-    color: 'cyan',
+    backgroundColor: 'cyan',
+    textColor: 'black',
     rare: true,
     locations: ['underground', 'caverns'],
     uses: ['crafting'],
@@ -11,7 +12,8 @@ var materials = [
   },
   {
     name: 'coal',
-    color: 'black',
+    backgroundColor: '#333333',
+    textColor: 'white',
     rare: false,
     locations: ['everywhere'],
     uses: ['crafting', 'fuel'],
@@ -19,7 +21,8 @@ var materials = [
   },
   {
     name: 'emerald',
-    color: 'green',
+    backgroundColor: 'green',
+    textColor: 'white',
     rare: true,
     locations: ['underground', 'caverns','mountains'],
     uses: ['trade'],
@@ -37,4 +40,20 @@ materials.forEach(function(material) {
   xp += material.xp;
   console.log(xp);
 
+});
+
+var buttons = document.getElementById('buttons');
+var score = document.getElementById('score');
+
+materials.forEach(function(material) {
+  buttons.innerHTML += '<button value="'+ material.xp +'" style="background-color: ' + material.backgroundColor + '; color: ' + material.textColor + '">' + material.name + '</button>'; 
+});
+
+buttons.addEventListener('click', function(evt) {
+  var elm = evt.target;
+  if (elm.tagName.toLowerCase() === 'button') {
+    alert(elm.innerText + ': ' + elm.value + ' xp');
+    xp += parseInt(elm.value, 10);
+    score.innerHTML = xp;
+  }
 });
