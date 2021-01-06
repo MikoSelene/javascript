@@ -32,14 +32,13 @@ var materials = [
 
 console.log(materials);
 
-//for(var i = 0; i <materials.length;i++){
-//console.log(materials[i])
-//}
+for(var i = 0; i <materials.length;i++){
+  console.log(materials[i])
+}
 
 materials.forEach(function(material) {
-  xp += material.xp;
+  // xp += material.xp;
   console.log(xp);
-
 });
 
 var buttons = document.getElementById('buttons');
