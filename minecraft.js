@@ -67,7 +67,7 @@ var buttons = document.getElementById('buttons');
 
 /*
 * guarda na variável score o elemento do HTML com o id="score"
-* neste caso é o <span id="score"></span>
+* neste caso é o <strong id="score"></strong>
 */
 var score = document.getElementById('score');
 
@@ -122,7 +122,7 @@ buttons.addEventListener('click', function(event) {
     * 1 + '1' = '11'
     */
 
-    // por fim escreve o valor da variável xp para dentro do <span id="score"></span>
+    // por fim escreve o valor da variável xp para dentro do <strong id="score"></strong>
     score.innerHTML = xp;
   }
 });
