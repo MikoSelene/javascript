@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olá mundo</title>
-    <script src="main.js"></script>
-</head>
-<body>
-    <h1>Cenas!</h1> 
-    <p>mais cenas</p>
+    <!-- título do separador do browser -->
+    <title>Minecraft</title>
+    <!-- formatação do documento (CSS) -->
+    <style>
+      /* para todo o documento... */
+      :root {
+        /* muda o tipo de letra para sem serifas (sem perninhas) */
+        font-family: sans-serif;
+      }
+      /* para todos os <button> excepto o último... */
+      button:not(:last-child) {
+        /* dá uma margem à direita de 10 píxeis */
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- cabeçalho de nível 1 (tamanho grande) -->
+    <h1>Minecraft</h1>
+    <!-- parágrafo -->
     <p>
-        o meu nome é:
-
-    
-    <script>
-        document.write(primeiroNome + ' ' + segundoNome);
-    </script>
+      Score:
+      <!-- score a bold (negrito) -->
+      <strong id="score">0</strong>
     </p>
-    <p>
-        a minha idade é:
-
-    
-    <script>
-        document.write(pessoaObjecto.idade);
-    </script>
-    </p>
-</body>
+    <!-- recipiente para os botões -->
+    <div id="buttons"></div>
+    <!-- carrega os ficheiros de javascript -->
+    <script src="materials.js"></script>
+    <script src="inventory.js"></script>
+  </body>
 </html>
