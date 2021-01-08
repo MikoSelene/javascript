@@ -10,9 +10,9 @@
 */
 
 /*
-* imprimir para a consola todos os items
+* imprimir na consola todos os items
 */
 
 /*
-* imprimir na console a soma das quantidades todas de todos os items
+* imprimir na consola a soma das quantidades todas de todos os items
 */
