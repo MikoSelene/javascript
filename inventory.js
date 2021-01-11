@@ -3,7 +3,7 @@
 */
 
 /*
-* criar uma variável de total items a começar a 0
+* criar uma variável chamada total do tipo number com o valor de 0
 */ 
 var total = 0;
 
