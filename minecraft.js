@@ -2,31 +2,31 @@ var xp = 0;
 
 var materials = [
   {
-    name: 'diamond',
-    backgroundColor: 'cyan',
-    textColor: 'black',
+    name: 'Diamond',
+    backgroundColor: '#008CE6',
+    textColor: '#FFFFFF',
     rare: true,
     locations: ['underground', 'caverns'],
     uses: ['crafting'],
-    xp:5000,
+    xp:500,
   },
   {
-    name: 'coal',
-    backgroundColor: '#333333',
+    name: 'Coal',
+    backgroundColor: '#323232',
     textColor: 'white',
     rare: false,
     locations: ['everywhere'],
     uses: ['crafting', 'fuel'],
-    xp:200
+    xp:20
   },
   {
-    name: 'emerald',
-    backgroundColor: 'green',
+    name: 'Emerald',
+    backgroundColor: '#00B900',
     textColor: 'white',
     rare: true,
     locations: ['underground', 'caverns','mountains'],
     uses: ['trade'],
-    xp:7500
+    xp:550
   }
 ];
 
