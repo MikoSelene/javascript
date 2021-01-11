@@ -13,42 +13,35 @@ var total = 0;
 * name, quantity, e outras que queiras, decide tu
 * a ideia é recriar o saco, inventário, etc...
 */
+var inventory = [
+  {
+    name: 'Spectral Arrow‌',
+    quantity: 34,
+  },
+  {
+    name: 'Music Disc (Cat)',
+    quantity: 1,
+  },
+  {
+    name: 'Raw Cod',
+    quantity: 13,
+  },
+  {
+    name: 'Name Tag',
+    quantity: 42,
+  },
+];
 
 /*
 * com o método forEach imprimir na consola todos os items
 * somar à variavel total as quantidades de cada item
 */
+inventory.forEach(function(item) {
+  console.log(item);
+  total += item.quantity;
+});
 
 /*
 * imprimir na consola a soma das quantidades todas de todos os items
 */
-
-var materials = [
-    {
-      name: 'diamond',
-      backgroundColor: '#008CE6',
-      textColor: '#FFFFFF',
-      rare: true,
-      locations: ['underground', 'caverns'],
-      uses: ['crafting'],
-      xp:500,
-    },
-    {
-      name: 'coal',
-      backgroundColor: '#323232',
-      textColor: '#FFFFFF',
-      rare: false,
-      locations: ['everywhere'],
-      uses: ['crafting', 'fuel'],
-      xp:20
-    },
-    {
-      name: 'emerald',
-      backgroundColor: '#00B900',
-      textColor: '#FFFFFF',
-      rare: true,
-      locations: ['underground', 'caverns','mountains'],
-      uses: ['trade'],
-      xp:550
-    }
-  ];
+console.log(total);
