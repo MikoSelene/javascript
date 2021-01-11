@@ -5,6 +5,7 @@
 /*
 * criar uma variável de total items a começar a 0
 */ 
+var total = 0;
 
 /*
 * criar um array chamado inventory
