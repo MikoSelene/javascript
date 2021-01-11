@@ -3,6 +3,7 @@
 */
 
 /*
+* criar uma variável de total items a começar a 0
 * criar um array chamado inventory
 * que tenha objectos lá dentro com as suas propriedades
 * name, quantity, e outras que queiras, decide tu
@@ -10,7 +11,8 @@
 */
 
 /*
-* imprimir na consola todos os items
+* com o método forEach imprimir na consola todos os items
+* somar à variavel total as quantidades de cada item
 */
 
 /*
