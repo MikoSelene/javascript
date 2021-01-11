@@ -4,6 +4,9 @@
 
 /*
 * criar uma variável de total items a começar a 0
+*/ 
+
+/*
 * criar um array chamado inventory
 * que tenha objectos lá dentro com as suas propriedades
 * name, quantity, e outras que queiras, decide tu
