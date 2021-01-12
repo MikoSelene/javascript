@@ -41,7 +41,7 @@ var materials = [
 */
 for (var i = 0; i < materials.length; i++) {
   // imprime o item que estiver no índice com o valor de i do array materials
-  console.log(materials[i]);
+  // console.log(materials[i]);
 }
 
 /* 
@@ -54,7 +54,7 @@ materials.forEach(function(material) {
   // xp += material.xp; 
   
   // imprime o valor de xp de cada item
-  console.log(material.xp);
+  // console.log(material.xp);
 });
 
 // MINI JOGO
@@ -63,13 +63,13 @@ materials.forEach(function(material) {
 * guarda na variável buttons o elemento do HTML com o id="buttons"
 * neste caso é o <div id="buttons"></div>
 */
-var buttons = document.getElementById('materials');
+var materialsElement = document.getElementById('materials');
 
 /*
 * guarda na variável score o elemento do HTML com o id="score"
 * neste caso é o <strong id="score"></strong>
 */
-var score = document.getElementById('score');
+var scoreElement = document.getElementById('score');
 
 /*
 * método forEach:
@@ -96,7 +96,7 @@ materials.forEach(function(material) {
   button.style.color = material.textColor;
 
   // adiciona o elemento <button> como filho do <div id="buttons"></div>
-  buttons.appendChild(button);
+  materialsElement.appendChild(button);
 });
 
 /*
@@ -104,14 +104,14 @@ materials.forEach(function(material) {
 * - fica à escuta de clicks no elemento <div id="buttons"></div>
 * - e executa uma função que recebe o evento de click como argumento
 */
-buttons.addEventListener('click', function(event) {
+materialsElement.addEventListener('click', function(event) {
   // atribui à variável element o alvo (target) do evento click
-  var element = event.target;
+  var target = event.target;
 
   // verifica se o alvo é um <button>
-  if (element.matches('button')) {
+  if (target.matches('button')) {
     // incrementa à variável xp (no topo do programa) o valor do atributo value do <button>
-    xp += parseInt(element.value, 10);
+    xp += parseInt(target.value, 10);
     /*
     * nota:
     * é necessário usar o método parseInt() ou parseFloat() para
@@ -123,6 +123,6 @@ buttons.addEventListener('click', function(event) {
     */
 
     // por fim escreve o valor da variável xp para dentro do <strong id="score"></strong>
-    score.innerHTML = xp;
+    scoreElement.innerHTML = xp;
   }
 });

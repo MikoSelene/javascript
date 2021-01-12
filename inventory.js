@@ -1,4 +1,4 @@
-var tabs = [
+var inventoryTabs = [
   {
     name: 'Blocos de construção',
     icon: '-208px -48px',
@@ -79,7 +79,7 @@ var tabs = [
 var inventoryElement = document.getElementById('inventory');
 
 // por cada item do array tabs, adiciona um botão com um icon ao inventoryElement
-tabs.forEach(function(item, index) {
+inventoryTabs.forEach(function(item, index) {
   var button = document.createElement('button');
   button.title = item.name;
   button.setAttribute('role', 'tab');

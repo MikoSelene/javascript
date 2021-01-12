@@ -10,16 +10,51 @@
   border: 0;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 body {
   background-color: #4DA7FF;
   width: 100vw;
   height: 100vw;
-  padding: 32px;
 }
 
-/* para todos os <button> excepto o último... */
+.logo {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.score {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+}
+
+#materials {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+#materials button {
+  padding: 15px;
+  border: 2px outset;
+}
+
 #materials button:not(:last-child) {
-  /* dá uma margem à direita de 10 píxeis */
   margin-right: 10px;
 }
 
@@ -28,6 +63,7 @@ body {
   top: 32px;
   right: 32px;
   width: 180px;
+  background: #9a9a9a;
 }
 
 #inventory [role=tab] {
@@ -38,7 +74,7 @@ body {
 }
 
 #inventory [role=tab]:nth-child(n + 7) {
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 #inventory [role=tab] i {
