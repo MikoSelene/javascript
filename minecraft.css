@@ -63,22 +63,24 @@ body {
 }
 
 #inventory {
+  display: flex;
+  flex-wrap: wrap;
   position: absolute;
   top: 32px;
   right: 32px;
-  width: 180px;
+  width: 192px;
   background: #9a9a9a;
 }
 
 #inventory [role=tab] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   background-color: #9a9a9a;
-  padding: 5px;
   border: 2px outset rgb(208, 208, 208);
   border-radius: 2px 2px 0 0;
-}
-
-#inventory [role=tab]:nth-child(n + 7) {
-  margin-top: 150px;
 }
 
 #inventory [role=tab] i {
@@ -92,4 +94,18 @@ body {
 
 #inventory [role=tab][aria-selected=true] {
   background-color: rgb(201, 201, 201);
+}
+
+#inventory [role=tabpanel][aria-hidden=true] {
+  display: none;
+}
+
+#inventory [role=tabpanel][aria-hidden=false] {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 150px;
+  padding: 10px;
 }

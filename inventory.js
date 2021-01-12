@@ -1,11 +1,11 @@
 var inventoryTabs = [
   {
     name: 'Blocos de construção',
-    icon: '-208px -48px',
+    icon: '-416px -96px',
   },
   {
     name: 'Blocos decorativos',
-    icon: '-144px -1712px',
+    icon: '-288px -3424px',
   },
   {
     name: 'Redstone',
@@ -80,20 +80,36 @@ var inventoryElement = document.getElementById('inventory');
 
 // por cada item do array tabs, adiciona um botão com um icon ao inventoryElement
 inventoryTabs.forEach(function(item, index) {
-  var button = document.createElement('button');
-  button.title = item.name;
-  button.setAttribute('role', 'tab');
-  if (index === 0) button.setAttribute('aria-selected', 'true');
-  
+  var tab = document.createElement('button');
+  tab.title = item.name;
+  tab.id = 'inventory-tab-' + index;
+  tab.setAttribute('role', 'tab');
+  tab.setAttribute('aria-controls', 'inventory-panel-' + index);
+  tab.setAttribute('aria-selected', index === 0);
+
   var icon = document.createElement('i');
   icon.style.backgroundPosition = item.icon;
   
-  button.appendChild(icon);
-  inventoryElement.appendChild(button);
+  tab.appendChild(icon);
+  inventoryElement.appendChild(tab);
+
+  if (index === 5) {
+    inventoryTabs.forEach(function(item, index) {
+      var panel = document.createElement('div');
+      panel.id = 'inventory-panel-' + index;
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-hidden', index > 0);
+      panel.innerHTML = inventoryTabs[index].name;
+      inventoryElement.appendChild(panel);
+    });    
+  }
 });
 
+// por cada item do array tabs, adiciona um painel ao inventoryElement
+
 // guarda na variável inventoryButtons todos os botões de inventoryElement
-var inventoryButtons = inventoryElement.querySelectorAll('button');
+var inventoryButtons = inventoryElement.querySelectorAll('#inventory [role=tab]');
+var inventoryPanels = inventoryElement.querySelectorAll('#inventory [role=tabpanel]');
 
 // detecta os clicks no elemento inventoryElement
 inventoryElement.addEventListener('click', function(event) {
@@ -106,7 +122,19 @@ inventoryElement.addEventListener('click', function(event) {
     inventoryButtons.forEach(function(button) {
       button.setAttribute('aria-selected', 'false');
     });
+
+    // muda o atributo aria-hidden de todos os painéis para true
+    inventoryPanels.forEach(function(panel) {
+      panel.setAttribute('aria-hidden', 'true');
+    });
+
     // muda o atributo aria-selected do botão clickado para true
     target.setAttribute('aria-selected', 'true');
+
+    // selecciona o painel correspondente à tab
+    var panel = document.getElementById(target.getAttribute('aria-controls'));
+
+    // muda o atributo aria-hidden do painel para false
+    panel.setAttribute('aria-hidden', false);
   }
 });
