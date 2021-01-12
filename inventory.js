@@ -1,3 +1,4 @@
+// DADOS
 var inventoryTabs = [
   {
     name: 'Blocos de construção',
@@ -93,23 +94,20 @@ inventoryTabs.forEach(function(item, index) {
   tab.appendChild(icon);
   inventoryElement.appendChild(tab);
 
+  // a seguir ao 6º botão (index 5)...
   if (index === 5) {
+    // por cada item do array tabs, adiciona um painel ao inventoryElement
     inventoryTabs.forEach(function(item, index) {
       var panel = document.createElement('div');
       panel.id = 'inventory-panel-' + index;
       panel.setAttribute('role', 'tabpanel');
       panel.setAttribute('aria-hidden', index > 0);
-      panel.innerHTML = inventoryTabs[index].name;
+      panel.innerHTML = item.name;
       inventoryElement.appendChild(panel);
     });    
   }
 });
 
-// por cada item do array tabs, adiciona um painel ao inventoryElement
-
-// guarda na variável inventoryButtons todos os botões de inventoryElement
-var inventoryButtons = inventoryElement.querySelectorAll('#inventory [role=tab]');
-var inventoryPanels = inventoryElement.querySelectorAll('#inventory [role=tabpanel]');
 
 // detecta os clicks no elemento inventoryElement
 inventoryElement.addEventListener('click', function(event) {
@@ -118,15 +116,11 @@ inventoryElement.addEventListener('click', function(event) {
 
   // verifica se o alvo é um <button>
   if (target.matches('button')) {
-    // muda o atributo aria-selected de todos os botões para false
-    inventoryButtons.forEach(function(button) {
-      button.setAttribute('aria-selected', 'false');
-    });
+    // muda o atributo aria-selected do botão activo para false
+    inventoryElement.querySelector('[role=tab][aria-selected=true]').setAttribute('aria-selected', 'false');
 
-    // muda o atributo aria-hidden de todos os painéis para true
-    inventoryPanels.forEach(function(panel) {
-      panel.setAttribute('aria-hidden', 'true');
-    });
+    // muda o atributo aria-hidden painel activo para true
+    inventoryElement.querySelector('[role=tabpanel][aria-hidden=false]').setAttribute('aria-hidden', 'true');
 
     // muda o atributo aria-selected do botão clickado para true
     target.setAttribute('aria-selected', 'true');
