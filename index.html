@@ -6,18 +6,7 @@
     <!-- título do separador do browser -->
     <title>Minecraft</title>
     <!-- formatação do documento (CSS) -->
-    <style>
-      /* para todo o documento... */
-      :root {
-        /* muda o tipo de letra para sem serifas (sem perninhas) */
-        font-family: sans-serif;
-      }
-      /* para todos os <button> excepto o último... */
-      button:not(:last-child) {
-        /* dá uma margem à direita de 10 píxeis */
-        margin-right: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="minecraft.css">
   </head>
   <body>
     <!-- cabeçalho de nível 1 (tamanho grande) -->
@@ -29,7 +18,8 @@
       <strong id="score">0</strong>
     </p>
     <!-- recipiente para os botões -->
-    <div id="buttons"></div>
+    <div id="materials"></div>
+    <div id="inventory"></div>
     <!-- carrega os ficheiros de javascript -->
     <script src="materials.js"></script>
     <script src="inventory.js"></script>

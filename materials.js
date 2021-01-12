@@ -63,7 +63,7 @@ materials.forEach(function(material) {
 * guarda na variável buttons o elemento do HTML com o id="buttons"
 * neste caso é o <div id="buttons"></div>
 */
-var buttons = document.getElementById('buttons');
+var buttons = document.getElementById('materials');
 
 /*
 * guarda na variável score o elemento do HTML com o id="score"

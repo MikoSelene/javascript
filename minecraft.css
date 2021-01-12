@@ -1,0 +1,55 @@
+/* para todo o documento... */
+:root {
+  /* muda o tipo de letra para sem serifas (sem perninhas) */
+  font-family: sans-serif;
+}
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: #4DA7FF;
+  width: 100vw;
+  height: 100vw;
+  padding: 32px;
+}
+
+/* para todos os <button> excepto o último... */
+#materials button:not(:last-child) {
+  /* dá uma margem à direita de 10 píxeis */
+  margin-right: 10px;
+}
+
+#inventory {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 180px;
+}
+
+#inventory [role=tab] {
+  background-color: #9a9a9a;
+  padding: 5px;
+  border: 2px outset rgb(208, 208, 208);
+  border-radius: 2px 2px 0 0;
+}
+
+#inventory [role=tab]:nth-child(n + 7) {
+  margin-top: 200px;
+}
+
+#inventory [role=tab] i {
+  display: block;
+  background-image: url(images/sprite.png);
+  background-size: 512px auto;
+  height: 16px;
+  width: 16px;
+  pointer-events: none;
+}
+
+#inventory [role=tab][aria-selected=true] {
+  background-color: rgb(201, 201, 201);
+}
