@@ -10,6 +10,10 @@
   border: 0;
 }
 
+:focus {
+  outline: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
