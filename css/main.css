@@ -1,0 +1,14 @@
+:root {
+  font-family: sans-serif;
+}
+li {
+  margin-bottom: 1rem;
+}
+.disabled {
+  opacity: .4;
+  pointer-events: none;
+}
+.disabled a {
+  color: black;
+  text-decoration: none;
+}
